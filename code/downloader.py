@@ -137,7 +137,7 @@ class Downloader(object):
             raise Exception('Failed to fetch video meta')
 
         for x in meta_res.json()['sources']:
-            if x['container'] == 'MP4' and 'src' in x:
+            if 'container' in x and x['container'] == 'MP4' and 'src' in x:
                 dl_url = x['src']
                 break
 
